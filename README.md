@@ -4,7 +4,7 @@ Projeto Integrador do segundo semestre de ADS Fatec ID (2023)
 ## Instalação
 Faça o clone do repositório pelo git bash: 
 ```bash
-git clone https://github.com/AmandaCacko/Projeto-Integrador-2sem.git
+git clone https://github.com/AmandaCacko/Projeto-Integrador-2sem
 ```
 Entre na pasta do projeto: cd Projeto-Integrador-2sem
 Instale as dependências: npm install

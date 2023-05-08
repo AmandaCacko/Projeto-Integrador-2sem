@@ -21,7 +21,7 @@ export const getAll =() => {
 }
 
 export const dbClientes = [
-    new Cliente(1,"Mario","mario@email,com","21231341455","06-05-1994","1912345678","1999886567","Cafelandia","SP", "Mari34567", "senhapadrao", "Panfleto" ),
-    new Cliente()
+    new Cliente(1,"Mario Santos","mario@email,com","21231341455","06-05-1994","1912345678","1999886567","Cafelandia","SP", "Mari34567", "senhapadrao", "Panfleto" ),
+    new Cliente(1,"Ana Souza","lu@email,com","21231341011","07-12-1999","1965445678","1996548567","Boituva","SP", "anas98765", "senhapadrao", "Shopping")
    
 ]

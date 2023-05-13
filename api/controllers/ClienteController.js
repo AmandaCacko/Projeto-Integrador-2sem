@@ -47,10 +47,16 @@ static createCliente(req,res){
             return
         }
 
+        const {nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu} = req.body
+        if(!nome || !email || !cpf || !dataNasc || !telefone || !telefoneResp || !cidade || !estado || !usuario || !senha|| !comoConheceu){
+            res.status(400).json({error: "Informe todos os campos!"})
+            return
+        }        
+
         cliente.nome = nome
         cliente.email = email
         cliente.cpf = cpf
-        cliente.datanasc = dataNasc
+        cliente.dataNasc = dataNasc
         cliente.telefone = telefone
         cliente.telefoneResp = telefoneResp
         cliente.cidade = cidade

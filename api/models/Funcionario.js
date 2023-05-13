@@ -1,19 +1,14 @@
 export class Funcionario{
-    constructor(id, nome, email, CPF, RG, nasc, telefone, endereco, cidade, estado, dadosbancarios, usuarioadmin, senha, PIS){
+    constructor(id, nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis){
         this.id = id
         this.nome = nome
         this.email = email
-        this.cpf = CPF
-        this.rg = RG
-        this.nasc = nasc
+        this.cpf = cpf
+        this.dataNasc = dataNasc
         this.telefone = telefone
-        this.endereco = endereco
-        this.cidade = cidade
-        this.estado = estado
-        this.dadosbancarios = dadosbancarios
-        this.usuarioadmin = usuarioadmin
+        this.usuarioAdmin = usuarioAdmin
         this.senha = senha
-        this.pis = PIS
+        this.pis = pis
     }
 }
 

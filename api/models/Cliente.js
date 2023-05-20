@@ -1,4 +1,64 @@
-export class Cliente{
+import { Sequelize } from "sequelize"
+import db from "../db.js"
+
+const Cliente = db.define('cliente',{
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    nome: {
+        type: Sequelize.STRING,
+        allowNull: false
+
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cpf: {
+        type: Sequelize.STRING, //Verificar se é Int
+        allowNull: false
+    },
+    dataNasc: {
+        type: Sequelize.STRING, // Verficar se é DATA mesmo
+        allowNull: false
+    },
+    telefone: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    telefoneResp: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    estado: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    usuario: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    senha: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    comoConheceu: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+
+
+})
+
+export default Cliente
+
+/*export class Cliente{
     constructor(id,nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu){
         this.id = id
         this.nome = nome
@@ -23,7 +83,7 @@ export const create = (cliente) => {
     cliente.id = idAtual
     dbClientes.push(cliente)
     return cliente
-}
+}*/
 
 /*export const create = (Cliente) => {
     Cliente.id = dbClientes.length + 1
@@ -31,7 +91,7 @@ export const create = (cliente) => {
     return Cliente
 }*/
 
-export const findByPk = (id) =>{
+/*export const findByPk = (id) =>{
     return dbClientes.find(cliente => cliente.id === id)
 }
 
@@ -62,4 +122,4 @@ export const dbClientes = [
     new Cliente(1,"Mario Santos","mario@email,com","21231341455","06-05-1994","1912345678","1999886567","Cafelandia","SP", "Mari34567", "senhapadrao", "Panfleto" ),
     new Cliente(2,"Ana Souza","lu@email,com","21231341011","07-12-1999","1965445678","1996548567","Boituva","SP", "anas98765", "senhapadrao", "Shopping")
    
-]
+]*/

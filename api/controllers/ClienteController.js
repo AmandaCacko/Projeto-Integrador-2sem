@@ -1,14 +1,15 @@
-import { Cliente, create, destroy, findAll, findByPk, update } from "../models/Cliente.js"
+import Cliente from "../models/Cliente.js"
 
 class ClienteController {
-    static list(req,res){
-        res.json(findAll())
+    static async list(req,res){
+        const clientes = await Cliente.findAll()
+        res.json(clientes)
         
     }
 
-    static getClienteById(req,res){
+    static async getClienteById(req,res){
         const id = parseInt(req.params.id)
-        const cliente = findByPk(id)
+        const cliente = await Cliente.findByPk(id)
         if(!cliente){
             res.status(404).json({error:"Não encontrado"})
             return
@@ -17,31 +18,30 @@ class ClienteController {
         res.json(cliente)
     }
 
-    static destroyCliente(req,res){
+    static async destroyCliente(req,res){
         const id = parseInt(req.params.id)
-        const cliente = findByPk(id)
+        const cliente = await Cliente.findByPk(id)
         if(!cliente){
             res.status(404).json({error:"Não encontrado"})
             return
         }
-        destroy(id)
+        Cliente.destroy({where: {id: cliente.id}})
         res.json({message: "Removido com sucesso!"})
     }
-static createCliente(req,res){
+    static async createCliente(req,res){
     const {nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu} = req.body
         if(!nome || !email || !cpf || !dataNasc || !telefone || !telefoneResp || !cidade || !estado || !usuario || !senha|| !comoConheceu){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        const cliente = new Cliente(0,nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu)
-        const createdCliente = create(cliente)
+        const createdCliente =  await Cliente.create({nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu})
         res.status(201).json(createdCliente)
     }
 
-    static updateCliente(req,res){
+    static async updateCliente(req,res){
         const id = parseInt(req.params.id)
-        const cliente = findByPk(id)
+        const cliente = await Cliente.findByPk(id)
         if(!cliente){
             res.status(404).json({error:"Não encontrado"})
             return
@@ -51,22 +51,10 @@ static createCliente(req,res){
         if(!nome || !email || !cpf || !dataNasc || !telefone || !telefoneResp || !cidade || !estado || !usuario || !senha|| !comoConheceu){
             res.status(400).json({error: "Informe todos os campos!"})
             return
-        }        
-
-        cliente.nome = nome
-        cliente.email = email
-        cliente.cpf = cpf
-        cliente.dataNasc = dataNasc
-        cliente.telefone = telefone
-        cliente.telefoneResp = telefoneResp
-        cliente.cidade = cidade
-        cliente.estado = estado
-        cliente.usuario = usuario
-        cliente.senha = senha
-        cliente.comoConheceu = comoConheceu
-
-        update(id,cliente)
-        res.json(cliente)
+        }
+        
+        const updatedCliente = await Cliente.update({nome,email,cpf,dataNasc,telefone,telefoneResp,cidade,estado,usuario,senha,comoConheceu},{where: {id: cliente.id}})
+        res.json(updatedCliente)
     }
 
 }

@@ -3,8 +3,7 @@ import Cliente from "../models/Cliente.js"
 class ClienteController {
     static async list(req,res){
         const clientes = await Cliente.findAll()
-        res.json(clientes)
-        
+        res.json(clientes)    
     }
 
     static async getClienteById(req,res){

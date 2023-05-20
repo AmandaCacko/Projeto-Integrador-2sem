@@ -1,9 +1,8 @@
 import  Funcionario  from "../models/Funcionario.js"
 
-
 class FuncionarioController {
     static async list (req,res){
-       const funcionario = await Funcionario.findAll()
+        const funcionario = await Funcionario.findAll()
         res.json(funcionario)
     }
 
@@ -28,14 +27,13 @@ class FuncionarioController {
         Funcionario.destroy({where: {id: funcionario.id}})
         res.json({message: "Removido com sucesso!"})
     }
-static async createFuncionario(req,res){
+    static async createFuncionario(req,res){
     const {id, nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis} = req.body
         if(!nome || !email || !cpf || !dataNasc || !telefone || !usuarioAdmin || !senha || !pis){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }
 
-        // const funcioanario = new Funcionario(0, nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis)
         const createdFuncionario = await Funcionario.create({nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis}) //req.boddy//
         res.status(201).json(createdFuncionario)
     }
@@ -48,23 +46,14 @@ static async createFuncionario(req,res){
             return
         }
 
-        const {nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis} = req.body //req.body.nome 
+        const {nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis} = req.body 
         if(!nome || !email || !cpf || !dataNasc || !telefone || !usuarioAdmin || !senha || !pis){
             res.status(400).json({error: "Informe todos os campos!"})
             return
         }        
 
-        // funcioanario.nome = nome
-        // funcioanario.email = email
-        // funcioanario.cpf = cpf
-        // funcioanario.dataNasc = dataNasc
-        // funcioanario.telefone = telefone
-        // funcioanario.usuarioAdmin = usuarioAdmin
-        // funcioanario.senha = senha
-        // funcioanario.pis = pis
-
        const updatedFuncionario = await Funcionario.update({nome, email, cpf, dataNasc, telefone, usuarioAdmin, senha, pis},{where: {id: funcioanario.id}})
-        res.json(updatedfuncionario)
+        res.json(updatedFuncionario)
     }
 
 }

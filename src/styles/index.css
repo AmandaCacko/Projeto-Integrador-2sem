@@ -1,0 +1,27 @@
+body {
+    padding: 10px;
+    font-family: sans-serif;
+    border: solid black;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+}
+form{
+    margin: 20px;
+}
+
+input{
+    width: 100%;
+}
+
+select {
+    width: 100%;
+}
+
+.button {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+}

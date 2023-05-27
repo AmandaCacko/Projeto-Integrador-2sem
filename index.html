@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu site</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Agenda de Clientes</h1>
+    <form id = formCadastroCliente>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+        <label for="email">E-mail</label>
+        <input type="email" id="email">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf">
+        <label for="dataNasc">Data de Nascimento</label>
+        <input type="date" id="dataNasc">
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone">
+        <label for="telefoneResp">Telefone do Responsavel</label>
+        <input type="text" id="telefoneResp">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade">
+        <label for="estado">Estado/UF</label>
+        <input type="text" id="estado">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha">
+        <label for="comoConheceu">Como Conheceu ?</label>
+        <input type="text" id="comoConheceu">
+        <button>Cadastrar</button>
+    </form>
+    <hr>
+    <ul id="listaClientes">
+    </ul>
+
+    <script type="module" src="src/components/index.js"></script>
+</body>
+</html>

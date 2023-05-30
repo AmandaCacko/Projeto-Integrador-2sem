@@ -1,5 +1,5 @@
-const stateSelect = document.querySelector('#state-select')
-const citySelect = document.querySelector('#city-select')
+const stateSelect = document.querySelector('#estado')
+const citySelect = document.querySelector('#cidade')
 
 const appendOption = (array, selection) => {
     citySelect.innerHTML = ''

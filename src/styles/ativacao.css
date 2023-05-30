@@ -3,6 +3,13 @@ body {
     background: linear-gradient(360deg,#694CFF,#4CDBFF);
 }
 
+.full-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
 label{
     color: white;
 }

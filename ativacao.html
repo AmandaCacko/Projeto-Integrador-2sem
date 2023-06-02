@@ -11,56 +11,56 @@
 </head>
 <body>
     <div class="container">
-        <form action="">
-            <div class="mb-3">
-                <label for="login">Login: </label>
-                <input type="login" class="inputLogin">
-                <button type="submit"> ENVIAR </button>
-              </div>
+        <form id="buscaCadastroCliente">
+   <div class="mb-3">
+                <label for="login">ID Cliente: </label>
+                <input type="text" id="login">
+                <button type="submit">ENVIAR</button>
+            </div>
             <label for="Nome"> Nome Completo:  </label> <br/>
-            <input type="text" name="Nome" readonly> <br>
+            <input type="text" id="nome" readonly> <br>
             <label for="Email"> Email:  </label> <br/>
-            <input type="email" name="Email" readonly> <br/>
+            <input type="email" id="email" readonly> <br/>
             <div>
-           
-                    <div class="row">
-                        <div class="col">
-                            <label for="CPF" > CPF:  </label> <br>
-                            <input type="number" name="CPF" readonly> <br>
-                        </div>
-                        <div class="col">
-                            <label for="Telefone" > Telefone:  </label> <br/>
-                            <input type="tel" name="Telefone" readonly><br/>
-                        </div>
-        
+                <div class="row">
+                    <div class="col">
+                        <label for="CPF" > CPF:  </label> <br>
+                        <input type="number" id="cpf" readonly> <br>
                     </div>
-            <div class="row">
-                <div class="col">
-                    <label for="DataNasc"> Data de nascimento:  </label> <br>
-                    <input type="date" name="Data de nascimento" readonly> <br>
+                    <div class="col">
+                        <label for="Telefone" > Telefone:  </label> <br/>
+                        <input type="tel" id="telefone" readonly><br/>
+                    </div>
                 </div>
-                <div class="col">
-                    <label for="TelefoneR"> Telefone responsável:  </label> <br/>
-                    <input type="tel" name="Telefone responsável" readonly><br/>
+                <div class="row">
+                    <div class="col">
+                        <label for="DataNasc"> Data de nascimento:  </label> <br>
+                        <input type="date" id="dataNasc" readonly> <br>
+                    </div>
+                    <div class="col">
+                        <label for="TelefoneR"> Telefone responsável:  </label> <br/>
+                        <input type="tel" id="telefoneResp" readonly><br/>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="Cidade"> Cidade:  </label> <br/>
-                    <input type="text" name="Cidade" readonly> <br/>
+                <div class="row">
+                    <div class="col">
+                        <label for="Cidade"> Cidade:  </label> <br/>
+                        <input type="text" id="cidade" readonly> <br/>
+                    </div>
+                    <div class="col">
+                        <label for="Estado"> Estado:  </label> <br>
+                        <select id="estado" disabled>
+                            <option value="">SP</option>
+                            <option value="">BA</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col">
-                <label for="Estado"> Estado:  </label> <br>
-                <select name="Estado" disabled="disabled">
-                    <option value="">SP</option>
-                    <option value="">BA</option>
-                </select>
-                </div>
-            </div>
-            <label for="conheceu"> Como nos conheceu:  </label> <br/>
-            <input type="text" name="conheceu" readonly ><br/>
-
-        </form>
+                <label for="comoConheceu"> Como nos conheceu:  </label> <br/>
+                <input type="text" id="conheceu" ><br
+        form>
     </div>
+    <script type="module" src="src\components\ativacao.js"></script>
+    <script type="module" src="api\controllers\ClienteController.js"></script>
 </body>
 </html>
+

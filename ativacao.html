@@ -18,10 +18,10 @@
 
   <body class="full-height">
     <div class="container">
-      <form class="box">
+      <form class="box" id="buscaCadastroCliente">
         <div class="input-group mb-3">
           <input id="login" type="login" class="form-control" name="login" placeholder="Login" />
-          <button type="button" class="btn btn-outline-light">ENVIAR</button>
+          <button type="submit" class="btn btn-outline-light">ENVIAR</button>
         </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome Completo:</label>
@@ -66,8 +66,8 @@
           </div>
         </div>
         <div class="mb-3">
-          <label for="comoConheceu" class="form-label">Como nos conheceu: </label>
-          <input id="comoConheceu" type="text" class="form-control" name="comoConheceu" readonly />
+          <label for="conheceu" class="form-label">Como nos conheceu: </label>
+          <input id="conheceu" type="text" class="form-control" name="conheceu" readonly />
         </div>
       </form>
     </div>
@@ -81,12 +81,16 @@
       <li></li>
       <li></li>
     </ul>
-  </body>
 
-  <script
+    <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"
   ></script>
   <script src="./src/components/ufSelect.js"></script>
-</html>
+  <script type="module" src="src\components\ativacao.js"></script>
+  <script type="module" src="api\controllers\ClienteController.js"></script>
+
+  </body>
+
+  </html>

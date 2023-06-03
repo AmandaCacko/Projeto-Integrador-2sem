@@ -38,7 +38,7 @@
             data-bs-parent="#accordion"
           >
             <div class="accordion-body bg-transparent text-body">
-              <form>
+              <form id="formCliente">
                 <div class="mb-3">
                   <label for="login" class="form-label text-white"
                     >Login:
@@ -79,18 +79,18 @@
             data-bs-parent="#accordion"
           >
             <div class="accordion-body">
-              <form>
+              <form id="formColaborador">
                 <div class="mb-3">
-                  <label for="login" class="form-label text-white"
+                  <label for="loginColaborador" class="form-label text-white"
                     >Login:
                   </label>
-                  <input type="login" class="form-control" />
+                  <input type="login" class="form-control" id="loginColaborador"/>
                 </div>
                 <div class="mb-3">
-                  <label for="senha" class="form-label text-white"
+                  <label for="senhaColaborador class="form-label text-white"
                     >Senha:
                   </label>
-                  <input type="password" class="form-control" />
+                  <input type="password" class="form-control" id="senhaColaborador" />
                 </div>
                 <div class="d-grid gap-2">
                   <button type="submit" class="btn btn-secondary btn-lg">
@@ -113,10 +113,39 @@
       <li></li>
       <li></li>
     </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        const formCliente = document.getElementById('formCliente')
+        formCliente.addEventListener('submit', (event) => {
+            event.preventDefault()
+            
+            const login = document.getElementById('loginCliente').value
+            const senha = document.getElementById('senhaCliente').value
+            
+            if (login !== '' && senha !== '') {
+                alert('Logado com Sucesso! Seja Bem Vindo!')
+            }
+        })
+  
+        const formColaborador = document.getElementById('formColaborador')
+        formColaborador.addEventListener('submit', (event) => {
+            event.preventDefault()
+            
+            const login = document.getElementById('loginColaborador').value
+            const senha = document.getElementById('senhaColaborador').value
+            
+            if (login !== '' && senha !== '') {
+                alert('Logado com Sucesso! Seja Bem Vindo!')
+            }
+        })
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"
-  ></script>
+  
 </html>

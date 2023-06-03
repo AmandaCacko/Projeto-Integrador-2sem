@@ -37,8 +37,8 @@ function preencherFormulario(cliente) {
   const dataNascElement = document.getElementById('dataNasc')
   const telefoneElement = document.getElementById('telefone')
   const telefoneRespElement = document.getElementById('telefoneResp')
-  const cidadeElement = document.getElementById('cidade')
   const estadoElement = document.getElementById('estado')
+  const cidadeElement = document.getElementById('cidade')
   const conheceuElement = document.getElementById('conheceu')
 
   nomeElement.value = cliente.nome
@@ -47,7 +47,7 @@ function preencherFormulario(cliente) {
   dataNascElement.value = cliente.dataNasc
   telefoneElement.value = cliente.telefone
   telefoneRespElement.value = cliente.telefoneResp
-  cidadeElement.value = cliente.cidade
   estadoElement.value = cliente.estado
+  cidadeElement.value = cliente.cidade
   conheceuElement.value = cliente.comoConheceu
 }

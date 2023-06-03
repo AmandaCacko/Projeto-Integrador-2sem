@@ -2,7 +2,7 @@ const stateSelect = document.querySelector('#estado')
 const citySelect = document.querySelector('#cidade')
 
 const appendOption = (array, selection) => {
-    citySelect.innerHTML = ''
+    citySelect.innerHTML = `<option disabled selected value="">Selecione</option>`
 
     array.forEach( item => {
         let option = document.createElement('option')
@@ -14,9 +14,17 @@ const appendOption = (array, selection) => {
 
 fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
 .then(res => res.json())
-.then(json => appendOption(json, stateSelect))
+.then(json => {
+    appendOption(json, stateSelect)
+})
 
-const fetchCities = UF => {
+fetch('https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome')
+.then(res => res.json())
+.then(json => {
+    appendOption(json, citySelect)
+})
+
+export const fetchCities = UF => {
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF}/municipios?orderBy=nome`)
     .then(res => res.json())
     .then(json => appendOption(json, citySelect))

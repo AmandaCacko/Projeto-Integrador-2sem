@@ -29,7 +29,7 @@ const Cliente = db.define('cliente',{
     },
     telefoneResp: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
     },
     cidade: {
         type: Sequelize.STRING,

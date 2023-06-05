@@ -56,7 +56,7 @@ function cadastrarCliente(form) {
     cpf: form.target.cpf.value,
     dataNasc: form.target.dataNasc.value,
     telefone: form.target.telefone.value,
-    telefoneResp: form.target.telefoneResp.value,
+    telefoneResp: form.target.telefoneResp.value !== '' ? form.target.telefoneResp.value : "Não tem",
     cidade: form.target.cidade.value,
     estado: form.target.estado.value,
     comoConheceu: form.target.comoConheceu.value

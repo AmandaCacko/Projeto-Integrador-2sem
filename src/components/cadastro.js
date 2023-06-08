@@ -71,14 +71,23 @@ function cadastrarCliente(form) {
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify(clienteNovo)
   })
-    .then(resposta => {
-      if (resposta.status != 201) {
-        alert('Erro ao Cadastrar!')
-        return
-      }else{
-        alert('Cadastro com Sucesso! Seu usuário é: ' + usuario)
-        atualizarClientes()
-      }
-    })
+  .then(resposta => {
+    if (resposta.status != 201) {
+      alert('Erro ao Cadastrar!')
+      return
+    } else {
+      return resposta.json();
+    }
+  })
+  .then(data => {
+    if (data) {
+      const { id } = data;
+      alert(`Cadastro com Sucesso! Seu usuário é: ${usuario} e seu ID é: ${id}`);
+      atualizarClientes();
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao Cadastrar:', error);
+  });
 }
 

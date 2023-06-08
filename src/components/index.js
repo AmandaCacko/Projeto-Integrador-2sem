@@ -36,8 +36,9 @@ const { usuario, senha } = gerarUsuarioESenha(clienteNovo.nome);
         if(resposta.status != 201){
             alert('Erro ao Cadastrar!')
             return
-        }
+        }else{
         alert('Cadastro com Sucesso!')
-        atualizarClientes()  
+        atualizarClientes()
+    } 
     })
 }

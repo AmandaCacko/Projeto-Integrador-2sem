@@ -75,9 +75,10 @@ function cadastrarCliente(form) {
       if (resposta.status != 201) {
         alert('Erro ao Cadastrar!')
         return
+      }else{
+        alert('Cadastro com Sucesso! Seu usuário é: ' + usuario)
+        atualizarClientes()
       }
-      alert('Cadastro com Sucesso!')
-      atualizarClientes()
     })
 }
 
